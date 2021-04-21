@@ -30,6 +30,20 @@
     ```
     echo $$
     ```
+
+- Check if environment variable is set
+    ```
+    [ -n "${VAR+x}" ] ## Fails if VAR is unset
+    [ -n "${VAR:+x}" ] ## Fails if VAR is unset or empty (doesn't work)
+    [ -n "${VAR-x}" ] ## Succeeds if VAR is unset
+    [ -n "${VAR:-x}" ] ## Succeeds if VAR is unset or empty (doesn't work)
+    ```
+
+- To remove a directory from the PATH
+    ```
+    export PATH=$(echo $PATH | sed 's#:/path/to/remote/##')
+    ```
+
 ### sed/awk
 - Sum column with negative numbers
     ```
