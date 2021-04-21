@@ -2,20 +2,22 @@
 
 ## Commands
 ### bash
-- Print commands as they are executed\
-```set -x```
+- Print commands as they are executed
+    ```
+    set -x
+    ```
 
 - Using basename with xargs\
-```ls | xargs -I % sh -c 'mv % new_path/$(basename %)'```
+    ```ls | xargs -I % sh -c 'mv % new_path/$(basename %)'```
 
 - Change .h files to .hpp files\
-```ls *.h | xargs -I % sh -c 'mv % $(dirname %)/$(basename % .h).hpp'```
+    ```ls *.h | xargs -I % sh -c 'mv % $(dirname %)/$(basename % .h).hpp'```
 
 - Dump environment variables\
-```env```
+    ```env```
 
 - Show all shell functions and environment variables\
-```set```
+    ```set```
 
 - Show bash function implementation\
 ```typeset -f <function>```
