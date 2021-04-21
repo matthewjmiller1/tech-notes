@@ -151,3 +151,31 @@
     # Delete the remote branch
     git push origin --delete test_branch
     ```
+
+- Using a local repo to push/pull from multiple remote repos
+    - Proxied client
+        - Cloning
+            ```
+            git clone -b <remote_branch> --single-branch <remote_repo2>
+            ```
+        - Pull/push
+            ```
+            git pull/push origin <remote_branch>
+            ```
+    - Open client
+        - Setup
+            ```
+            git clone <remote_repo1>
+            git co -b <proxy_branch>
+            git remote add <remote_origin> <remote_repo2>
+            git push <remote_origin> <proxy_branch>
+            ```
+        - Pull/push (example for pulling changes from proxied client and pushing
+          them to public repo)
+            ```
+            git co <proxy_branch>
+            git pull <remote_origin> <proxy_branch>
+            git co main
+            git merge <proxy_branch>
+            git push origin main
+            ```
