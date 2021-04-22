@@ -44,6 +44,11 @@
     export PATH=$(echo $PATH | sed 's#:/path/to/remote/##')
     ```
 
+- Use xargs with a bash function
+    ```
+    ls | grep "dir/" | xargs bash -c '<function> "$@"' _
+    ```
+
 ### sed/awk
 - Sum column with negative numbers
     ```
