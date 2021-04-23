@@ -49,6 +49,21 @@
     ls | grep "dir/" | xargs bash -c '<function> "$@"' _
     ```
 
+- To output man pages
+    ```
+    man <command> | col -b > filename.txt
+    ```
+
+- Edit command line with ```$EDITOR```
+    ```
+    <CTRL+X> <CTRL+E>
+    ```
+
+- Show build-in options
+    ```
+    set -o
+    ```
+
 ### sed/awk
 - Sum column with negative numbers
     ```
