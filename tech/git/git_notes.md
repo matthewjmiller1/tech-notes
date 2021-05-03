@@ -179,3 +179,30 @@
             git merge <proxy_branch>
             git push origin main
             ```
+
+- Divergent branch options
+    - In 2.27.0, a warning was added about behavior on reconciling divergent
+      branches.
+        - [Git warning: Pulling without specifying how to reconcile divergent branches is discouraged](https://salferrarello.com/git-warning-pulling-without-specifying-how-to-reconcile-divergent-branches-is-discouraged/) 
+        - [How to deal with this git warning? “Pulling without specifying how to
+          reconcile divergent branches is
+          discouraged”](https://stackoverflow.com/questions/62653114/how-to-deal-with-this-git-warning-pulling-without-specifying-how-to-reconcile)
+    - Recommendation is to make fast-forward only the default behavior and then
+      explicitly do merge commit or rebase when required.
+        - Set fast-forward as default
+            ```
+            git config --global pull.ff only
+            ```
+        - Rebase
+            ```
+            git pull --rebase
+            ```
+        - Merge commit
+            ```
+            git fetch
+            git merge origin/<branchname>
+            ```
+            or
+            ```
+            git pull -c pull.ff=false pull
+            ```
