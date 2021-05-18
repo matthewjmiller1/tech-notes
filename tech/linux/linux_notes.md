@@ -100,3 +100,12 @@
 
 #### Observe Kernel Packet Drops
 - [dropwatch](https://linux.die.net/man/1/dropwatch)
+
+## Configuration
+
+### sudo Access
+- In [Ubuntu](https://linuxize.com/post/how-to-add-user-to-sudoers-in-ubuntu/),
+  ```visudo``` and add to the end of ```/etc/sudoers```:
+    ```
+    username  ALL=(ALL) NOPASSWD:ALL
+    ```
