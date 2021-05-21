@@ -64,6 +64,15 @@
     set -o
     ```
 
+- Fix bracket mode paste
+    ```
+    $ cat ~/fix_paste
+    #!/bin/bash
+
+    printf "\e[?2004l"
+    $
+    ```
+
 ### sed/awk
 - Sum column with negative numbers
     ```
@@ -109,3 +118,9 @@
     ```
     username  ALL=(ALL) NOPASSWD:ALL
     ```
+
+### Linux Namespaces
+#### Locations
+- Files for each namespace (e.g., network): ```/var/run/netns/```
+- For a proc: ```/proc/<pid>/ns/net/```
+- For a thread: ```/proc/<pid>/task/<tid>/ns/net/```
