@@ -83,6 +83,18 @@
     sed -n '9,16p' file.txt | awk '{ s += $4} END { printf("%.2f\n", s) }'
     ```
 
+### grep
+- [Search for non-ASCII (e.g., unicode) characters](https://stackoverflow.com/questions/3001177/how-do-i-grep-for-all-non-ascii-characters)
+    ```
+    grep --color='auto' -r -P -n "[^\x00-\x7F]" .
+    ```
+
+### vim
+- [Search for non-ASCII characters](https://stackoverflow.com/questions/16987362/how-to-get-vim-to-highlight-non-ascii-characters)
+    ```
+    /[^\x00-\x7F]
+    ```
+
 ## Tools
 
 ### Networking
