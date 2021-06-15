@@ -122,6 +122,9 @@
 #### Observe Kernel Packet Drops
 - [dropwatch](https://linux.die.net/man/1/dropwatch)
 
+#### Virtual Interfaces
+- [Introduction to Linux interfaces for virtual networking](https://developers.redhat.com/blog/2018/10/22/introduction-to-linux-interfaces-for-virtual-networking)
+
 ## Configuration
 
 ### sudo Access
