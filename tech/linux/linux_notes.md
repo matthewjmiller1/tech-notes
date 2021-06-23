@@ -134,7 +134,60 @@
     username  ALL=(ALL) NOPASSWD:ALL
     ```
 
+### Linux cgroups
+- Run cgconfig
+    ```
+    systemctl start cgconfig.service
+    systemctl stop cgconfig.service
+    ```
+- Create a cgroup (creates ```/sys/fs/cgroup/memory/group1/```)
+    ```
+    cgcreate -g memory:group1
+    ```
+- Delete a cgroup
+    ```
+    cgdelete -g memory:group1
+    ```
+- Add a process to a group
+    ```
+    cgclassify -g memory:group1 <pid>
+    ```
+- Show mounted cgroup controllers
+    ```
+    lssubsys
+    ```
+
 ### Linux Namespaces
+#### Utilities
+- Network namespaces
+    - Create
+        ```
+        ip netns add myns1
+        ```
+    - Delete
+        ```
+        ip netns del myns1
+        ```
+    - List
+        ```
+        ip netns list
+        ```
+    - Monitor for add/remove of network namespaces
+        ```
+        ip netns monitor
+        ```
+    - Move eth0 to namespace
+        ```
+        ip link set eth0 netns myns1
+        ```
+    - Start bash in namespace
+        ```
+        ip netns exec myns1 bash
+        ```
+    - Exec a command in all net namespaces
+        ```
+        ip -all netns exec ip link
+        ```
 #### Locations
 - Files for each namespace (e.g., network): ```/var/run/netns/```
 - For a proc: ```/proc/<pid>/ns/net/```
