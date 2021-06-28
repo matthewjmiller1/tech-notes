@@ -129,7 +129,8 @@
 
 ### sudo Access
 - In [Ubuntu](https://linuxize.com/post/how-to-add-user-to-sudoers-in-ubuntu/),
-  ```visudo``` and add to the end of ```/etc/sudoers```:
+  ```visudo``` and add to the end of ```/etc/sudoers``` (change "username" to
+  the username being given sudo access):
     ```
     username  ALL=(ALL) NOPASSWD:ALL
     ```
