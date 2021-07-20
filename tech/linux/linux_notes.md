@@ -125,6 +125,58 @@
 #### Virtual Interfaces
 - [Introduction to Linux interfaces for virtual networking](https://developers.redhat.com/blog/2018/10/22/introduction-to-linux-interfaces-for-virtual-networking)
 
+## Kernel Tracing
+- [Linux Tracing Technologies](https://www.kernel.org/doc/html/latest/trace/index.html)
+
+### Event Tracing
+- Show events that can be traced:
+```
+sudo ls /sys/kernel/debug/tracing/events
+sudo ls /sys/kernel/debug/tracing/events/syscalls
+```
+- See if tracing is enabled for event:
+```
+sudo cat /sys/kernel/debug/tracing/events/syscalls/sys_enter_write/enable
+```
+- Enable/disable tracing for an event:
+```
+sudo echo 1 > /sys/kernel/debug/tracing/events/syscalls/sys_enter_write/enable
+sudo echo 0 > /sys/kernel/debug/tracing/events/syscalls/sys_enter_write/enable
+```
+- Show format for event:
+```
+root@9c8834f35ca7:/# cat /sys/kernel/debug/tracing/events/syscalls/sys_enter_write/format 
+name: sys_enter_write
+ID: 685
+format:
+	field:unsigned short common_type;	offset:0;	size:2;	signed:0;
+	field:unsigned char common_flags;	offset:2;	size:1;	signed:0;
+	field:unsigned char common_preempt_count;	offset:3;	size:1;signed:0;
+	field:int common_pid;	offset:4;	size:4;	signed:1;
+
+	field:int __syscall_nr;	offset:8;	size:4;	signed:1;
+	field:unsigned int fd;	offset:16;	size:8;	signed:0;
+	field:const char * buf;	offset:24;	size:8;	signed:0;
+	field:size_t count;	offset:32;	size:8;	signed:0;
+
+print fmt: "fd: 0x%08lx, buf: 0x%08lx, count: 0x%08lx", ((unsigned long)(REC->fd)), ((unsigned long)(REC->buf)), ((unsigned long)(REC->count))
+root@9c8834f35ca7:/#
+```
+
+### Show Traces
+- Non-consuming read (leaves traces from file)
+```
+sudo cat /sys/kernel/debug/tracing/trace
+```
+- Consuming read (removes traces from file)
+```
+sudo cat /sys/kernel/debug/tracing/trace_pipe
+```
+- Clear all traces
+```
+sudo echo > /sys/kernel/debug/tracing/trace
+```
+
 ## Configuration
 
 ### sudo Access
