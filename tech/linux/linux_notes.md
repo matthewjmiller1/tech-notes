@@ -95,6 +95,15 @@
     /[^\x00-\x7F]
     ```
 
+### tc
+- Use [pedit](https://man7.org/linux/man-pages/man8/tc-pedit.8.html) to modify
+  egress packets with a destination port of 50001 to have a source IP address of
+  172.20.0.3 and recalculate the IP and TCP checksums.
+    ```
+    tc qdisc replace dev eth0 root handle 1: htb
+    tc filter add dev eth0 parent 1: u32 match ip dport 50001 0xffff action pedit ex munge ip src set 172.20.0.3 pipe csum ip and tcp
+    ```
+
 ## Tools
 
 ### Networking
