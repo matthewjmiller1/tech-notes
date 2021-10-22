@@ -134,6 +134,18 @@
 #### Virtual Interfaces
 - [Introduction to Linux interfaces for virtual networking](https://developers.redhat.com/blog/2018/10/22/introduction-to-linux-interfaces-for-virtual-networking)
 
+## NFS tracing
+- [RHEL NFS issue](https://access.redhat.com/solutions/4148851)
+    ```
+    rpcdebug -m nlm -s all
+    rpcdebug -m rpc -s all
+    <test>
+    rpcdebug -m nlm -c all
+    rpcdebug -m rpc -c all
+    ```
+    - [rpcdebug(8)](https://linux.die.net/man/8/rpcdebug)
+    - May be replaced by sunprc tracepoints in the future.
+
 ## Kernel Tracing
 - [Linux Tracing Technologies](https://www.kernel.org/doc/html/latest/trace/index.html)
 
