@@ -107,6 +107,17 @@
 ## Tools
 
 ### Networking
+#### Stats
+- netstat replacements in Linux:
+    - [ss(8)](https://man7.org/linux/man-pages/man8/ss.8.html) for socket stats.
+    - [nstat(8)](https://man7.org/linux/man-pages/man8/nstat.8.html) to show
+      SNMP network stats (global counters like ```netstat -s```).
+        - Use ```nstat -azs``` for the closest to ```netstat -s``` behavior
+          because the ```nstat``` default it to show incremental, non-zero
+          counters.
+    - [ip(8)](https://man7.org/linux/man-pages/man8/ip.8.html) to set and show
+      network configuration
+
 #### Test Connections
 - [nc](http://www.freebsd.org/cgi/man.cgi?query=nc)
 - [ncat](http://nmap.org/ncat/)
