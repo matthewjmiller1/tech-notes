@@ -243,6 +243,10 @@ sudo echo > /sys/kernel/debug/tracing/trace
     ```
 
 ### Linux Namespaces
+#### lxc
+- [What's LXC?](https://linuxcontainers.org/lxc/introduction/)
+- [LXC manpages](https://linuxcontainers.org/lxc/manpages/index.html)
+    - [lxc-create(1)](https://linuxcontainers.org/lxc/manpages/man1/lxc-create.1.html)
 #### Utilities
 - Network namespaces
     - Create
