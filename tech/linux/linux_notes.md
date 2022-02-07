@@ -73,6 +73,11 @@
     $
     ```
 
+- Fix tty issues
+```
+stty sane
+```
+
 ### sed/awk
 - Sum column with negative numbers
     ```
