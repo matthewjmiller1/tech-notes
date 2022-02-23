@@ -74,9 +74,15 @@
     ```
 
 - Fix tty issues
-```
-stty sane
-```
+    ```
+    stty sane
+    ```
+    - Another [option](https://unix.stackexchange.com/a/511741), e.g., if
+      terminal scrolling is broken due to an ungraceful connection termination
+      while in a program that remaps keys like `vim`:
+        ```
+        tput rmcup
+        ```
 
 ### sed/awk
 - Sum column with negative numbers
