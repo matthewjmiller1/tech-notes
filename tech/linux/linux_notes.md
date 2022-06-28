@@ -120,6 +120,7 @@
 ### Networking
 #### Stats
 - netstat replacements in Linux:
+    - [Task-centered iproute2 user guide](https://baturin.org/docs/iproute2/)
     - [Deprecated Linux networking commands and their
     replacements](https://dougvitale.wordpress.com/2011/12/21/deprecated-linux-networking-commands-and-their-replacements/)
     - [ss(8)](https://man7.org/linux/man-pages/man8/ss.8.html) for socket stats.
