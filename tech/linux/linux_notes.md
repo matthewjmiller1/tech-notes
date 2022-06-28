@@ -120,6 +120,8 @@
 ### Networking
 #### Stats
 - netstat replacements in Linux:
+    - [Deprecated Linux networking commands and their
+    replacements](https://dougvitale.wordpress.com/2011/12/21/deprecated-linux-networking-commands-and-their-replacements/)
     - [ss(8)](https://man7.org/linux/man-pages/man8/ss.8.html) for socket stats.
     - [nstat(8)](https://man7.org/linux/man-pages/man8/nstat.8.html) to show
       SNMP network stats (global counters like ```netstat -s```).
