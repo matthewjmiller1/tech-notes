@@ -233,6 +233,13 @@ sudo echo > /sys/kernel/debug/tracing/trace
     username  ALL=(ALL) NOPASSWD:ALL
     ```
 
+### corefiles
+- Enable corefiles with PID in name
+    ```
+    ulimit -c unlimited
+    sudo sh -c 'sysctl -w kernel.core_uses_pid=1 >> /etc/sysctl.d/core.conf'
+    ```
+
 ### Linux cgroups
 - Run cgconfig
     ```
