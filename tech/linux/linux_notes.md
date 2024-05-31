@@ -131,6 +131,12 @@
     grep --color='auto' -r -P -n "[^\x00-\x7F]" .
     ```
 
+- [Search for invalid UTF-8 characters](https://stackoverflow.com/a/41741313)
+
+    ```
+    grep -axv '.*' file.txt
+    ```
+
 ### vim
 
 - [Search for non-ASCII characters](https://stackoverflow.com/questions/16987362/how-to-get-vim-to-highlight-non-ascii-characters)
