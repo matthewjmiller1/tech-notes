@@ -156,6 +156,13 @@
     tc filter add dev eth0 parent 1: u32 match ip dport 50001 0xffff action pedit ex munge ip src set 172.20.0.3 pipe csum ip and tcp
     ```
 
+### ssh
+
+- Disable `timed out waiting for input: auto-logout` ssh logouts in RHEL9:
+    ```
+    exec env TMOUT=0 bash
+    ```
+
 ## Tools
 
 ### Networking
