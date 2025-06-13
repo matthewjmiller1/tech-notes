@@ -162,6 +162,7 @@
     ```
     exec env TMOUT=0 bash
     ```
+    - With sudo access, may edit `/etc/profile.d/tmout.sh` to disable this.
 
 ## Tools
 
