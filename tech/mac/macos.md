@@ -56,3 +56,11 @@
     This generates `~/.terminfo/78/xterm-256color-italic`. Now you can set
     `TERM=xterm-256color-italic` and set it in the iterm2 profile:
     `Preferences > Profiles > Terminal > Report Terminal Type`.
+
+## Applications
+
+### Wireshark
+
+- Must open second instance to have multiple `.pcap` files opened at once. Use
+  the terminal command `open -n /Applications/Wireshark.app` to open the second
+  instance.
